@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     setLoadingInterceptor({ showLoading, hideLoading });
-  }, [showLoading, hideLoading]);
+  }, []);
 
   return (
     <>
