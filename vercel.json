@@ -19,6 +19,6 @@
       "dest": "/frontend/build/index.html"
     }
   ],
-  "buildCommand": "npm run build:frontend",
+  "buildCommand": "npm run build",
   "installCommand": "npm install"
 }
