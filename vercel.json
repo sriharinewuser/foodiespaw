@@ -1,14 +1,17 @@
 {
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
+  "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "installCommand": "npm install",
-        "buildCommand": "npm run build"
-      }
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/build",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/build/$1"
     }
   ]
 }
