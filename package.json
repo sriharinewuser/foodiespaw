@@ -14,5 +14,10 @@
   "license": "ISC",
   "engines": {
     "node": ">=18 <19"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bootstrap": "^5.3.7",
+    "react-router-dom": "^7.8.1"
   }
 }
