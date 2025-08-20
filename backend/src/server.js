@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000','https://foodiespaw.vercel.app/'],
   })
 );
 
@@ -43,7 +43,7 @@ app.get('*', (req, res) => {
 
 
 
-const PORT = process.env.port ||5000;
+const PORT = process.env.Port ||5000;
 app.listen(PORT, () => {
   console.log('listening on port ' + PORT);
 });
