@@ -25,6 +25,11 @@ app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 
+// Health check endpoint for Render
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'OK', message: 'Server is healthy' });
+});
+
 // ✅ no need for static/public if frontend is deployed separately
 
 const PORT = process.env.PORT || 5000;
