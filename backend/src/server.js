@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ['https://foodiespaw.vercel.app','http://localhost:3000'],
+    origin: ['https://foodiespaw.vercel.app', 'https://foodiespaw-mvc4h6az3-sriharisris-projects.vercel.app','http://localhost:3000'],
   })
 );
 
