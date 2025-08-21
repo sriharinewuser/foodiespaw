@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+
 dotenv.config();
 import express from 'express';
 import cors from 'cors';
@@ -30,7 +31,7 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Server is healthy' });
 });
 
-// ✅ no need for static/public if frontend is deployed separately
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
