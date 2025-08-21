@@ -14,11 +14,10 @@ dbconnect();
 const app = express();
 app.use(express.json());
 
-
 app.use(
   cors({
     credentials: true,
-    origin: process.env.FRONTEND_URL ? [process.env.FRONTEND_URL, 'http://localhost:3000'] : ['https://foodiespaw.vercel.app'], // frontend origins
+    origin: ['https://foodiespaw.vercel.app','http://localhost:3000'],
   })
 );
 
