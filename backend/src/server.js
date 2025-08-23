@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'http://localhost:4200'],
   })
 );
 
@@ -31,7 +31,7 @@ app.use('/api/orders', orderRouter);
 
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log('listening on port ' + PORT);
 });
