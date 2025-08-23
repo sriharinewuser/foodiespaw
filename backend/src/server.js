@@ -10,7 +10,8 @@ import orderRouter from './routers/order.router.js';
 import { dbconnect } from './config/database.config.js';
 dbconnect();
 
-
+import path from 'path';
+const __dirname = path.resolve();
 
 const app = express();
 app.use(express.json());
@@ -20,6 +21,8 @@ app.use(
     origin: ['http://localhost:3000'],
   })
 );
+
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
