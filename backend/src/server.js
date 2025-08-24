@@ -17,7 +17,15 @@ app.use(
     credentials: true,
     origin: ['http://localhost:3000',],
   })
-);
+);// ...existing code...
+app.use((req, res, next) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://foodiespaw.onrender.com; img-src 'self' data: https:; connect-src 'self' https://foodiespaw.onrender.com"
+  );
+  next();
+});
+// ...existing code...
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
