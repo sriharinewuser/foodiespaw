@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ['https://foodiespaw.vercel.app',],
+    origin: ['http://localhost:3000','https://foodiespaw.vercel.app',],
   })
 );// ...existing code...
 app.use((req, res, next) => {
