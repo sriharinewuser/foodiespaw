@@ -26,6 +26,21 @@ app.use((req, res, next) => {
   next();
 });
 // ...existing code...
+app.get('/', (req, res) => {
+  res.status(200).json({ 
+    message: 'FoodiesPaw Backend API is running',
+    version: '1.0.0',
+    endpoints: {
+      foods: '/api/foods',
+      users: '/api/users',
+      orders: '/api/orders'
+    }
+  });
+});
+
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
@@ -33,9 +48,6 @@ app.use('/api/orders', orderRouter);
 // app.use('/api/upload', uploadRouter);
 
 // Root route handler
-app.get('/', (req, res) => {
-  res.send('Backend is running!');
-});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
