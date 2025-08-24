@@ -29,3 +29,15 @@ services:
         sync: false
     healthCheckPath: /api/health
     autoDeploy: true
+
+  - type: web
+    name: foodiespaw-frontend
+    env: node
+    buildCommand: cd frontend && npm ci --production=false && npm run build
+    staticPublishPath: ./frontend/build
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: REACT_APP_API_URL
+        value: https://foodiespaw-backend.onrender.com
+    autoDeploy: true
