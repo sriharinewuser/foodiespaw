@@ -27,21 +27,21 @@ app.use((req, res, next) => {
 });
 // ...existing code...
 
-app.get('/', (req, res) => {
-  res.send('Backend is running!');
-});
+// app.get('/', (req, res) => {
+//   res.send('Backend is running!');
+// });
 
-app.get('/', (req, res) => {
-  res.status(200).json({ 
-    message: 'FoodiesPaw Backend API is running',
-    version: '1.0.0',
-    endpoints: {
-      foods: '/api/foods',
-      users: '/api/users',
-      orders: '/api/orders'
-    }
-  });
-});
+// app.get('/', (req, res) => {
+//   res.status(200).json({ 
+//     message: 'FoodiesPaw Backend API is running',
+//     version: '1.0.0',
+//     endpoints: {
+//       foods: '/api/foods',
+//       users: '/api/users',
+//       orders: '/api/orders'
+//     }
+//   });
+// });
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
