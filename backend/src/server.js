@@ -26,6 +26,11 @@ app.use((req, res, next) => {
   next();
 });
 // ...existing code...
+
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
+
 app.get('/', (req, res) => {
   res.status(200).json({ 
     message: 'FoodiesPaw Backend API is running',
@@ -37,18 +42,12 @@ app.get('/', (req, res) => {
     }
   });
 });
-
-app.get('/', (req, res) => {
-  res.send('Backend is running!');
-});
-
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 // app.use('/api/upload', uploadRouter);
 
 // Root route handler
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log('listening on port ' + PORT);
